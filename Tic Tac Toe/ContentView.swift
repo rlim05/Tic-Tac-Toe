@@ -2,14 +2,16 @@
 //  ContentView.swift
 //  Tic Tac Toe
 //
-//  Created by Student on 11/1/21.
+//  Created by Ryan Lim on 11/1/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Tic Tac Toe")
+            .font(.title)
+            .fontWeight(.bold)
             .padding()
     }
 }
