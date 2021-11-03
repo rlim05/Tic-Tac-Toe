@@ -9,10 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Tic Tac Toe")
-            .font(.title)
-            .fontWeight(.bold)
-            .padding()
+        VStack {
+            Text("Tic Tac Toe")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+            LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 15), count: 3), content: {
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+                Text("X")
+            })
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
