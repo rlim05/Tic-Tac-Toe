@@ -54,12 +54,23 @@ struct ContentView: View {
         })
     }
     private func checkForWinner() {
-        if moves[0] != "" && moves[0] == moves[1] && moves[1] == moves[2] {
-            winMessage = "\(moves[0]) is the winner!"
+        checkLine(a: 0, b: 1, c: 2) // top row
+        checkLine(a: 3, b: 4, c: 5) // middle row
+        checkLine(a: 6, b: 7, c: 8) // bottom row
+        checkLine(a: 0, b: 3, c: 6) // first column
+        checkLine(a: 1, b: 4, c: 7) // second column
+        checkLine(a: 2, b: 5, c: 8) // third column
+        checkLine(a: 0, b: 4, c: 8) // top left to bottom right
+        checkLine(a: 2, b: 4, c: 6) // top right to bottom left
+     }
+    private func checkLine(a: Int, b: Int, c: Int) {
+        if moves[a] != "" && moves[a] == moves[b] && moves[b] == moves[c] {
+            winMessage = "\(moves[a]) is the winner!"
             gameOver = true
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
